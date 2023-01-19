@@ -7,6 +7,7 @@ using AzureIOT.Model;
 
 namespace AzureIOT.Repositories
 {
+    //This is for Device
     public class DevicePropertiesRepository
     {
         private static string connectionString = "HostName=iothub-sn230113.azure-devices.net;SharedAccessKeyName=iothubowner;SharedAccessKey=vh/uyxnFYv1oN+Z926iG6oKCXrt6f6OaRubHA2qhOd8=";
