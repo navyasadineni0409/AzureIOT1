@@ -13,7 +13,7 @@ namespace AzureIOT.Repositories
         private static string connectionString = "HostName=iothub-sn230113.azure-devices.net;SharedAccessKeyName=iothubowner;SharedAccessKey=vh/uyxnFYv1oN+Z926iG6oKCXrt6f6OaRubHA2qhOd8=";
         public static RegistryManager registryManager = RegistryManager.CreateFromConnectionString(connectionString);
 
-        public static DeviceClient client;
+        //public static DeviceClient client;
         private static string myDeviceConnection = "HostName=iothub-sn230113.azure-devices.net;DeviceId=sensor-thl-01;SharedAccessKey=1F4gngsqIZFTNiBU+370/yIHzzEOVwrsFbwOj+0tTBI=";
 
         public static async Task UpdateReportedPropertiesAsync(string deviceId, Properties properties)
@@ -24,7 +24,7 @@ namespace AzureIOT.Repositories
             }
             else
             {
-                client = DeviceClient.CreateFromConnectionString(myDeviceConnection, Microsoft.Azure.Devices.Client.TransportType.Mqtt);
+                DeviceClient client = DeviceClient.CreateFromConnectionString(myDeviceConnection, Microsoft.Azure.Devices.Client.TransportType.Mqtt);
                 TwinCollection reportedProperties, connectivity;
                 reportedProperties = new TwinCollection();
                 connectivity = new TwinCollection();
@@ -46,7 +46,7 @@ namespace AzureIOT.Repositories
             }
             else
             {
-                client = DeviceClient.CreateFromConnectionString(myDeviceConnection, Microsoft.Azure.Devices.Client.TransportType.Mqtt);
+                DeviceClient client = DeviceClient.CreateFromConnectionString(myDeviceConnection, Microsoft.Azure.Devices.Client.TransportType.Mqtt);
                 TwinCollection desiredProperties, telemetryConfig;
                 desiredProperties = new TwinCollection();
                 telemetryConfig = new TwinCollection();
@@ -89,7 +89,7 @@ namespace AzureIOT.Repositories
                 }
                 }";
 
-                client = DeviceClient.CreateFromConnectionString(myDeviceConnection, Microsoft.Azure.Devices.Client.TransportType.Mqtt);
+                DeviceClient client = DeviceClient.CreateFromConnectionString(myDeviceConnection, Microsoft.Azure.Devices.Client.TransportType.Mqtt);
                 TwinCollection connectivity;
                 connectivity = new TwinCollection();
                 connectivity["type"] = "cellular";

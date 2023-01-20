@@ -9,7 +9,7 @@ namespace AzureIOT.Repositories
 {
     public class DeviceRepository
     {
-        public static RegistryManager registryManager;
+       // public static RegistryManager registryManager;
         private static string connectionString = "HostName=iothub-sn230113.azure-devices.net;SharedAccessKeyName=iothubowner;SharedAccessKey=vh/uyxnFYv1oN+Z926iG6oKCXrt6f6OaRubHA2qhOd8=";
         public static async Task AddDeviceAsync(string deviceName)
         {
@@ -18,21 +18,21 @@ namespace AzureIOT.Repositories
                 throw new ArgumentNullException("deviceNamePlease");
             }
             Device device;
-            registryManager = RegistryManager.CreateFromConnectionString(connectionString);
+            RegistryManager registryManager = RegistryManager.CreateFromConnectionString(connectionString);
             device = await registryManager.AddDeviceAsync(new Device(deviceName));
             return;
         }
         public static async Task<Device> GetDeviceAsync(string deviceId)
         {
             Device device;
-            registryManager = RegistryManager.CreateFromConnectionString(connectionString);
+            RegistryManager registryManager = RegistryManager.CreateFromConnectionString(connectionString);
             device = await registryManager.GetDeviceAsync(deviceId);
             return device;
 
         }
         public static async Task DeleteDeviceAync(string deviceId)
         {
-            registryManager = RegistryManager.CreateFromConnectionString(connectionString);
+            RegistryManager registryManager = RegistryManager.CreateFromConnectionString(connectionString);
             await registryManager.RemoveDeviceAsync(deviceId);
         }
         public static async Task<Device> UpdateDeviceAsync(string deviceId)
@@ -42,7 +42,7 @@ namespace AzureIOT.Repositories
                 throw new ArgumentNullException("deviceNamePlease");
             }
             Device device = new Device(deviceId);
-            registryManager = RegistryManager.CreateFromConnectionString(connectionString);
+            RegistryManager registryManager = RegistryManager.CreateFromConnectionString(connectionString);
             device = await registryManager.GetDeviceAsync(deviceId);
             device.StatusReason = "Updated Sucessfully";
             device = await registryManager.UpdateDeviceAsync(device);

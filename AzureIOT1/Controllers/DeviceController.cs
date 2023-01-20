@@ -14,10 +14,10 @@ namespace AzureIOT.Controllers
     public class DeviceController : ControllerBase
     {
         [HttpPost("AddIotDevice")]
-        public async Task<string> AddDevice(string deviceName)
+        public async Task AddDevice(string deviceName)
         {
             await DeviceRepository.AddDeviceAsync(deviceName);
-            return null;
+            return;
         }
         [HttpGet("GetIotDevice")]
         public async Task<Device> GetDeviceAsync(string deviceName)
@@ -27,10 +27,10 @@ namespace AzureIOT.Controllers
             return device;
         }
         [HttpDelete("DeleteIotDevice")]
-        public async Task<string>DeleteIotDevice(string deviceName)
+        public async Task DeleteIotDevice(string deviceName)
         {
             await DeviceRepository.DeleteDeviceAync(deviceName);
-            return null;
+            return;
         }
         [HttpPut("UpdateIotDevice")]
         public async Task<Device>UpdateDeviceProperties(string deviceName)
