@@ -10,11 +10,11 @@ namespace AzureIOT.Repositories
     //This is for Device
     public class DevicePropertiesRepository
     {
-        private static string connectionString = "HostName=iothub-rgsn230120.azure-devices.net;SharedAccessKeyName=iothubowner;SharedAccessKey=aP6l1V0x1TjpjzRCvR0lBw2Z8FVnnxmikZxQB2aqAkg=";
+        private static string connectionString = "HostName=navyaiothub.azure-devices.net;SharedAccessKeyName=iothubowner;SharedAccessKey=Fo5M60zKi2RIE7LMU8aFIwfWUMb5yuUhXqRdje2TZ4w=";
         public static RegistryManager registryManager = RegistryManager.CreateFromConnectionString(connectionString);
 
         //public static DeviceClient client;
-        private static string myDeviceConnection = "HostName=iothub-rgsn230120.azure-devices.net;DeviceId=sensor-thl-01;SharedAccessKey=RQsT7CWeixBSWJB138G+4NP1L393D8L/Hau0xES029U=";
+        private static string myDeviceConnection = "HostName=navyaiothub.azure-devices.net;DeviceId=sensor-thl-01;SharedAccessKey=rFYKP6ZlY0U2AyQzQvmZiUmAqLGbBQb8CAmIOzjVy8c=";
 
         public static async Task UpdateReportedPropertiesAsync(string deviceId, Properties properties)
         {
