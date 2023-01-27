@@ -13,10 +13,10 @@ namespace AzureIOT.Repositories
 {
     public class SendTelemetryRepository
     {
-        private static string connectionString = "HostName=iothub-sn230126.azure-devices.net;SharedAccessKeyName=iothubowner;SharedAccessKey=1FsmLQvj0w23xQ8wBzDqxezs7d2357ME1M3FZoorKgw=";
+        private static string connectionString = "HostName=iothub-sn230126.azure-devices.net;SharedAccessKeyName=iothubowner;SharedAccessKey=wNNRIEHd7g6ZlGgB1/pzKeRfg2wavCtx0ebqpypLddE=";
        // public static RegistryManager registryManager;
        // public static DeviceClient client = null;
-        public static string myDeviceConnection= "HostName=iothub-sn230126.azure-devices.net;DeviceId=sensor-thl-01;SharedAccessKey=9wZNgDVx2/uEFmVmdeEyRUQDdav8j+p8XVNWVGmA2MY=";
+        public static string myDeviceConnection= "HostName=iothub-sn230126.azure-devices.net;DeviceId=sensor-thl-01;SharedAccessKey=NvpCFlBYOhWo/63JZSFoX8FAa/rJ9lb6YJrBuI980JQ=";
         public static async Task SendMessage(string deviceName)
         {
             try
