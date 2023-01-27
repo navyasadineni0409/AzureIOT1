@@ -10,10 +10,10 @@ EXPOSE 443
 
 FROM mcr.microsoft.com/dotnet/sdk:6.0 AS build
 WORKDIR /src
-COPY ["AzureIOT1/AzureIOT1.csproj", "AzureIOT1/"]
-RUN dotnet restore "AzureIOT1/AzureIOT1.csproj"
+COPY ["AzureIOT1.csproj", "."]
+RUN dotnet restore "./AzureIOT1.csproj"
 COPY . .
-WORKDIR "/src/AzureIOT1"
+WORKDIR "/src/."
 RUN dotnet build "AzureIOT1.csproj" -c Release -o /app/build
 
 FROM build AS publish
