@@ -10,7 +10,7 @@ namespace AzureIOT.Repositories
     public class DeviceRepository
     {
        // public static RegistryManager registryManager;
-        private static string connectionString = "HostName=iothub-sn230130.azure-devices.net;SharedAccessKeyName=iothubowner;SharedAccessKey=zgrlYCDoozeUardFYmCaLk/mbY8zlm84PUFu+8TbWJ0=";
+        private static string connectionString = "HostName=iothub-sn230201.azure-devices.net;SharedAccessKeyName=iothubowner;SharedAccessKey=FK7LjWHopijZ4ulwAX37SPcM5GffwZEDCLklP4hYqT4=";
         public static async Task AddDeviceAsync(string deviceName)
         {
             if(string.IsNullOrEmpty(deviceName))
