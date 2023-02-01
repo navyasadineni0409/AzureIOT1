@@ -14,7 +14,7 @@ namespace AzureIOT.Repositories
         public static RegistryManager registryManager = RegistryManager.CreateFromConnectionString(connectionString);
 
         //public static DeviceClient client;
-        private static string myDeviceConnection = "HostName=iothub-sn230201.azure-devices.net;DeviceId=sensor-thl-01;SharedAccessKey=0Cx1onlh3Jpcq5j9AVIQc1QvrdEV2xav1aSCDqTU1QQ=";
+        private static string myDeviceConnection = "HostName=iothub-sn230201.azure-devices.net;DeviceId=sensor-thl-01;SharedAccessKey=VOT6jrWUt4YmahwjkgqlE71NeulGUSk1f7WimGfLtUQ=";
 
         public static async Task UpdateReportedPropertiesAsync(string deviceId, Properties properties)
         {
